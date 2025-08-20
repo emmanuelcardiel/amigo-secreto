@@ -1,9 +1,12 @@
 consol.log("ejecutando el sistema")
 
 function verificarIngreso() {
-    let amigos : [];
-        amigos [] : "";
-    let escribeUnNombre = document.getElementById("amigo").value
+    
+    let escribeUnNombre = document.getElementById("amigo").value;
+
+    if (escribeUnNombre === "") {
+        alert("escribe un nombre, por favor");
+    }
 
     //Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
 
