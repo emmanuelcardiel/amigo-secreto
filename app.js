@@ -30,7 +30,11 @@ function mostrarLista() {
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = "";
 }
-
+  for (let i = 0; i < amigos.length; i++) {
+        const element = amigos[i];
+        
+        lista.innerHTML += "<li>" + element + "</li>";
+    }
 
     //Obtener el elemento de la lista: Utilizar document.getElementById() o document.querySelector() para seleccionar la lista donde se mostrarán los amigos.
 
