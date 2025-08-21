@@ -9,8 +9,14 @@ function verificarIngreso() {
         return;
         
     }
-    amigos.push(escribeUnNombre);
 
+    if (amigos.includes(escribeUnNombre)) {
+        limpiarCaja();
+        return;
+        
+    }
+    amigos.push(escribeUnNombre);
+    mostrarLista();
     limpiarCaja();
 }
 
@@ -19,7 +25,11 @@ function limpiarCaja() {
     let valorCaja = document.getElementById("amigo")
     valorCaja.value = "";
 }   
-   
+
+function mostrarLista() {
+    let lista = document.getElementById("listaAmigos");
+    lista.innerHTML = "";
+}
 
 
     //Obtener el elemento de la lista: Utilizar document.getElementById() o document.querySelector() para seleccionar la lista donde se mostrarán los amigos.
