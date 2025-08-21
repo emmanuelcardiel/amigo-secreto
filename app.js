@@ -7,9 +7,20 @@ function verificarIngreso() {
     if (escribeUnNombre === "") {
         alert("escribe un nombre, por favor");
         return;
+        
     }
-amigos.push(escribeUnNombre);
+    amigos.push(escribeUnNombre);
+
+    limpiarCaja();
+}
+
     
+function limpiarCaja() {
+    let valorCaja = document.getElementById("amigo")
+    valorCaja.value = "";
+}   
+   
+
 
     //Capturar el valor del campo de entrada: Utilizar document.getElementById o document.querySelector para obtener el texto ingresado por el usuario.
 
@@ -18,4 +29,3 @@ amigos.push(escribeUnNombre);
 //Actualizar el array de amigos: Si el valor es válido, añadirlo al arreglo que almacena los nombre de amigos usando el método.push().
 
 //Limpiar el campo de entrada: Después de añadir el nombre, restablecer el campo de texto a una cadena vacía.
-}
