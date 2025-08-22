@@ -31,11 +31,18 @@ function mostrarLista() {
     lista.innerHTML = "";
 }
   for (let i = 0; i < amigos.length; i++) {
-        const element = amigos[i];
+        let element = amigos[i];
         
         lista.innerHTML += "<li>" + element + "</li>";
     }
 
+    function sortearAmigo() {
+        if (amigos.length === 0) {
+        alert("no hay amigos por sortear");
+        return;    
+        }
+        
+    }
 //Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
 
 //Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice aleatorio del arreglo.
