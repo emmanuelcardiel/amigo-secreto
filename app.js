@@ -1,7 +1,6 @@
 let amigos = [];
 
-function verificarIngreso() {
-    
+    function verificarIngreso() {
     let escribeUnNombre = document.getElementById("amigo").value;
 
     if (escribeUnNombre === "") {
@@ -10,11 +9,7 @@ function verificarIngreso() {
         
     }
 
-    if (amigos.includes(escribeUnNombre)) {
-        limpiarCaja();
-        return;
-        
-    }
+
     amigos.push(escribeUnNombre);
     mostrarLista();
     limpiarCaja();
@@ -24,25 +19,31 @@ function verificarIngreso() {
 function limpiarCaja() {
     let valorCaja = document.getElementById("amigo")
     valorCaja.value = "";
-}   
+}
 
 function mostrarLista() {
     let lista = document.getElementById("listaAmigos");
     lista.innerHTML = "";
-}
-  for (let i = 0; i < amigos.length; i++) {
-        let element = amigos[i];
-        
+
+    for (let i = 0; i < amigos.length; i++) {
+        const element = amigos[i];
         lista.innerHTML += "<li>" + element + "</li>";
     }
+}
 
-    function sortearAmigo() {
-        if (amigos.length === 0) {
-        alert("no hay amigos por sortear");
-        return;    
-        }
-        
-    }
+function sortearAmigo() {
+    if (amigos.length === 0) {
+        alert("no hay amigos para sortear");
+        return;
+    }    
+
+    let indiceAleatorio = Math.floor(Math.random() * amigos.length);
+    let amigoSorteado = amigos[indiceAleatorio];
+
+    let resultado = document.getElementById("resultado")
+    resultado.innerHTML = `<li><strong>El amigo sorteado es:</strong> ${amigoSorteado}</li>`;
+}
+
 //Validar que haya amigos disponibles: Antes de sortear, comprobar si el array amigos no está vacío.
 
 //Generar un índice aleatorio: Usar Math.random() y Math.floor() para seleccionar un índice aleatorio del arreglo.
